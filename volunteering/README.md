@@ -1,5 +1,5 @@
 
-### Course Content (tbd)
+## Course Content (tbd)
 
 Theory/Revision
 ---------------
