@@ -6,7 +6,22 @@ Theory/Revision
 - Java basics (spring, design patterns)
 - Version control
 - TDD basics
-- Intro to CLI and unix etc
+- Intro to git, unix etc
+- **Note to self:** Remember to ask Adam if leetcode/interview prep needs to be covered as well
+
+
+Git 
+----
+
+sudo apt-get install git/brew install git
+
+git config --global user.name "name"
+git config --global user.email "email"
+
+to initialize repo do the following:
+
+
+
 
 Writing code
 ------------
