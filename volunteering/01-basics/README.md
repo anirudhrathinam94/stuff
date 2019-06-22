@@ -15,7 +15,7 @@ Note: Show students my own dev env here + dot files and scripts
 Building the code
 ------------------
 
-**What is the use of build automation? (Ant basics)**
+**How do we build programs?**
 
 Let us go back to our hello world program and consider the steps for building it. Create a separate folder for all the class executables and build the file.
 To build just run the following command:
@@ -38,6 +38,10 @@ To run the app, simply do:
 We have the desired output. However what if we have ten java files? or a hundred? or a thousand? We cannot run the same command for all of them. Which is why we have packages.
 
 In packages we package multiple files in a single package. In java this is called Java Archival or jar. Think of it as a collection of class files.
+
+
+
+**Need for automation (Ant basics)**
 
 **What about dependencies? (Maven basics)**
 
