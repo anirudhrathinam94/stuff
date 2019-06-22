@@ -15,7 +15,7 @@ Note: Show students my own dev env here + dot files and scripts
 Building the code
 ------------------
 
-### What is the use of build automation? (Ant basics)
+**What is the use of build automation? (Ant basics)**
 
 Let us go back to our hello world program and consider the steps for building it. Create project structure as follows:
 
@@ -27,7 +27,7 @@ Let us go back to our hello world program and consider the steps for building it
 
 To build just run: javac -s src -d build/classes src/Hello.java
 
-### What about dependencies? (Maven basics)
+**What about dependencies? (Maven basics)**
 
 Testing - Junit, Mockito and unit/integration tests
 ---------------------------------------------------
