@@ -18,9 +18,21 @@ sudo apt-get install git/brew install git
 git config --global user.name "name"
 git config --global user.email "email"
 
-to initialize repo do the following:
+**To initialize repo do the following:**
 
+cd to workplace
+git init
 
+**Connecting to remote**
+
+in this case remote will be github
+git remote add origin <link>
+
+**Using git**
+
+good practice to checkout to new branch and develop from there in case revisions need to be made
+be sure to pull and rebase before push
+can use tig to see commits
 
 
 Writing code
