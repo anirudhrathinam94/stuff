@@ -35,7 +35,19 @@ To run the app, simply do:
 
     java -cp build/classes Hello
     
-We have the desired output. However what if we have ten java files? or a hundred? or a thousand? We cannot run the same command for all of them. Which is why we have packages.
+We have the desired output. Let us now define a Statement class in a new file that returns some string. We want to print this string out in the Hello Class.
+
+The code for this is:
+
+    class Statement {
+        public String getString() {
+            String s = "Something";
+            return s;
+        }
+    }
+
+
+However what if we have ten java files? or a hundred? or a thousand? We cannot run the same command for all of them. Which is why we have packages.
 
 In packages we package multiple files in a single package. In java this is called Java Archival or jar. Think of it as a collection of class files.
 
