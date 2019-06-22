@@ -17,15 +17,25 @@ Building the code
 
 **What is the use of build automation? (Ant basics)**
 
-Let us go back to our hello world program and consider the steps for building it. Create project structure as follows:
+Let us go back to our hello world program and consider the steps for building it. Create a separate folder for all the class executables and build the file.
+To build just run the following command:
+
+    javac -s src -d build/classes src/Hello.java
+
+This should leave you with a project heirarchy as follows:
 
     .
     ├── build
     │   └── classes
+    │          └── Hello.class
     └── src
         └── Hello.java
 
-To build just run: javac -s src -d build/classes src/Hello.java
+To run the app, simply do:
+
+    java -cp build/classes Hello
+    
+We have the desired output. However what if we have ten java files? or a hundred? or a thousand? We cannot run the same command for all of them. Which is why we have packages. 
 
 **What about dependencies? (Maven basics)**
 
