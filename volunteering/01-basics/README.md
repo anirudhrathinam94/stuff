@@ -39,17 +39,40 @@ We have the desired output. Let us now define a Statement class in a new file th
 
 The code for this is:
 
+    package tutorial;
     class Statement {
         public String getString() {
             String s = "Something";
             return s;
         }
     }
+    
+    package tutorial;
+    class Hello {
+        public static void main(String args[]) {
+            Statement s = new Statement();
+            System.out.println(s.getString());
+        }
+    }
+
+To compile do: 
+    
+    javac -s src -d build/classes src/Hello.java src/Statement.java
+
+The project structure becomes (tutorial created as it is name of pkg):
+
+    .
+    ├── build
+    │   └── classes
+    │       └── tutorial
+    │           ├── Hello.class
+    │           └── Statement.class
+    └── src
+        ├── Hello.java
+        └── Statement.java
 
 
-However what if we have ten java files? or a hundred? or a thousand? We cannot run the same command for all of them. Which is why we have packages.
-
-In packages we package multiple files in a single package. In java this is called Java Archival or jar. Think of it as a collection of class files.
+However what if we have ten java files? or a hundred? or a thousand? We cannot run the command for all of them. Which is why we compile pakcages into jars. Think of a jar as a collection of class files.
 
 
 
