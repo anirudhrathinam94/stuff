@@ -122,12 +122,18 @@ Folder structure is shown below:
         ├── Hello.java
         └── Statement.java
 
-We had to do all this crap just to run a simple hello world program. Bigger projects can get far more complicated. When we deploy apps to the server, we need an easier way to build files so they can be executed. Doing it manually is time consuming (for larger projects) and error prone. This is where the need to automate the build process arises.
+We had to do all this crap just to run a simple hello world program. Bigger projects can get far more complicated. When we deploy apps to the server, we need an easier way to build files so they can be executed. Doing it manually is time consuming (for larger projects) and error prone. 
+
+This is where the need to automate the build process arises. There are various tools to automate the build process such as ANT, Maven, Gradle etc.
+
+----------------------------------------
+
+**Ant basics**
+
+Ant is an XML based scripting language.
 
 
-**Need for automation (Ant basics)**
-
-**What about dependencies? (Maven basics)**
+**Maven basics**
 
 Testing - Junit, Mockito and unit/integration tests
 ---------------------------------------------------
