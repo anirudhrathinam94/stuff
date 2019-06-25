@@ -127,12 +127,12 @@ We had to do all this crap just to run a simple hello world program. Bigger proj
 This is where the need to automate the build process arises. There are various tools to automate the build process such as ANT, Maven, Gradle etc.
 
 ----------------------------------------
-
 **Ant basics**
 
 Ant is an XML based scripting language.
 
 
+----------------------------------------
 **Maven basics**
 
 Testing - Junit, Mockito and unit/integration tests
