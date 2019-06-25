@@ -129,7 +129,12 @@ This is where the need to automate the build process arises. There are various t
 ----------------------------------------
 **Ant basics**
 
-Ant is an XML based scripting language.
+Ant is an XML based scripting language. To install and all you need to do is: 
+
+- download and extract the ant archive 
+- set the path variable (which lets us use the ant command in the extracted directory).
+- Your package manager can take care of this for you (sudo apt-get install ant or brew install ant)
+
 
 
 ----------------------------------------
