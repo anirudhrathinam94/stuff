@@ -74,6 +74,55 @@ The project structure becomes (tutorial created as it is name of pkg):
 
 However what if we have ten java files? or a hundred? or a thousand? We cannot run the command for all of them. Which is why we compile pakcages into jars. Think of a jar as a collection of class files.
 
+Create file structure as follows:
+
+    .
+    ├── build
+    │   ├── classes
+    │   │   └── tutorial
+    │   │       ├── Hello.class
+    │   │       └── Statement.class
+    │   └── jar
+    └── src
+        ├── Hello.java
+        └── Statement.java
+
+Run the following command to create the jar
+
+    jar cf build/jar/Hello.jar -C build/classes/tutorial .
+    
+Now our job is to run this. If we try to run the jar using the following command:
+
+    java -jar build/jar/Hello.jar
+
+We get an error saying no main manifest attribute, in build/jar/Hello.jar. This is because there are 2 types of jars - Executable and Non Executable jars. This is non executable. We can draw parallels in the windows world where we have .exe and .dll both are a collection of classes but .exe is executable, .dll is non executable. However in java both executable and non executable have the .jar extension.
+
+In order to make a .jar executable, we need somthing called a manifest file.
+
+    echo Main-Class: tutorial.Hello>myManifest
+
+Then run the following to create the executable jar:
+
+    jar cfm build/jar/Hello.jar myManifest -C build/classes .
+
+By looking at the jar file name you cannot tell if it is an executable but if you try running it, it gets executed successfully.
+
+Folder structure is shown below:
+
+    .
+    ├── build
+    │   ├── classes
+    │   │   └── tutorial
+    │   │       ├── Hello.class
+    │   │       └── Statement.class
+    │   └── jar
+    │       └── Hello.jar
+    ├── myManifest
+    └── src
+        ├── Hello.java
+        └── Statement.java
+
+We had to do all this crap just to run a simple hello world program. Bigger projects can get far more complicated. When we deploy apps to the server, we need an easier way to build files so they can be executed. Doing it manually is time consuming (for larger projects) and error prone. This is where the need to automate the build process arises.
 
 
 **Need for automation (Ant basics)**
