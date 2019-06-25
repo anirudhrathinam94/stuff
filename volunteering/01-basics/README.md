@@ -10,7 +10,7 @@ It is whatever you need to write and execute a program on your computer. You can
 
 Let us consider a simple hello world program: The dev env is the editor/ide we used, to build it we had to use javac <Filename.java> and to run it we had to run java <Classname>.
 
-Note: Show students my own dev env here + dot files and scripts 
+Note: Show students my own dev env here + dot files and scripts. Also if they use windows/mac tell them about cygwin, homebrew etc in case they dont use it.
 
 Building the code
 ------------------
