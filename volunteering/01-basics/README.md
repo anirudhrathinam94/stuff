@@ -135,7 +135,9 @@ Ant is an XML based scripting language. To install and all you need to do is:
 - set the path variable (which lets us use the ant command in the extracted directory).
 - Your package manager can take care of this for you (sudo apt-get install ant or brew install ant)
 
+Now that ANT is setup, we need to automate the build process. We do so by writing an XML file and pass that file via the ant command. We simply do: ant build.xml and ANT will do everything for us including build, compile, execute, package etc.
 
+Ant needs a build.xml file to do its thing. This section briefly describes the build.xml file and how it works.
 
 ----------------------------------------
 **Maven basics**
