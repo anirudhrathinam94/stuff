@@ -139,6 +139,45 @@ Now that ANT is setup, we need to automate the build process. We do so by writin
 
 Ant needs a build.xml file to do its thing. This section briefly describes the build.xml file and how it works.
 
+**build.xml**
+
+A basic build.xml has the following structure:
+
+- We have the project tag that encloses everything. This is the root tag.
+- Inside the project tag we have the target tag
+    - In a project.xml we can have multiple targets
+    - A target is just a group of tasks or action items you can perform
+    - Every target may have multiple tasks
+- A task represents an individual action item. For example compile the code, create dir etc are actions
+    - Note: You cannot keep tasks outside the target tag
+
+The tags and attributes are described below:
+
+- Project:
+    - name: name of project
+    - default: default target to execute. Note that you can give only one target
+    - basedir: where exactly the project should be run (example c drive)
+- Target:
+    - name: name of target (mandatory)
+    - depends: dependency targets. If 'A' is called by project.default, target A first looks in the depends tag and executes that first
+    - description: description of target
+- Task:
+    - An actual action performed. **Note: There is no standardized task tag. Tasks have different tags depending on the task you want to perform.** We have n number of task tags.
+    - To compile java code we use <javac>, to make new directory we use <mkdir>, to delete dir we use <delete> and so on.
+    - The rest of ant is about learning these tasks.
+
+An example build.xml ant script skeleton is:
+
+    <project name="tutorial" default="A" basedir=".">
+      <target name="A" depends ="B">
+          <task1></task1>
+          <task2></task2>
+      </target>
+      <target name="B">
+          <task3></task3>
+      </target>
+    </project>
+
 ----------------------------------------
 **Maven basics**
 
