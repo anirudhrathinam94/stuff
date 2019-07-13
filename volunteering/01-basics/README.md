@@ -12,7 +12,7 @@ Let us consider a simple hello world program: The dev env is the editor/ide we u
 
 Note: Show students my own dev env here + dot files and scripts. Also if they use windows/mac tell them about cygwin, homebrew etc in case they dont use it.
 
-Building the code
+Building code
 ------------------
 
 **How do we build programs?**
@@ -209,7 +209,7 @@ Some advantage of Maven are:
     - This means src code becomes lightweight and there is no duplication of libraries.
 - In the devops side using maven means writing less scripts when compared to using ant because most things are auto generated.
 
-As a build tool, maven can generate code, compile, package and deploy on the server.
+As a build tool, maven can generate code, compile, package and deploy on the server. Note that because maven does a lot of work for us, we need to follow a default project structure. This is different from ant where we could have any random structure because we had to write and specify everything ourselves in the build.xml script.
 
 
 
