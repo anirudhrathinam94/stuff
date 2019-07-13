@@ -170,16 +170,48 @@ An example build.xml ant script skeleton is:
 
     <project name="tutorial" default="A" basedir=".">
       <target name="A" depends ="B">
-          <task1></task1>
-          <task2></task2>
+          <echo>Target a task 1</echo>
+          <echo>Target a task 2</echo>
       </target>
       <target name="B">
-          <task3></task3>
+          <echo>Target b task 1</echo>
       </target>
     </project>
 
+Here the task is echo. The terminal output on running this is:
+
+    B:
+         [echo] Target b task 1
+
+    A:
+         [echo] Target a task 1
+         [echo] Target a task 2
+
 ----------------------------------------
 **Maven basics**
+
+This was developed to deal with the issues/concerns associated with ant. Some of the limitations of ANT are as follows:
+
+- In the build.xml we had to describe what to build (what to compile) and how to run (using javac). We had to explicitely describe the ordering of dependencies (prepare folders -> then compile -> then package -> then run).
+    - For shorter projects this is fine but for larger projects it can become far too long and complex as we have a single script where all the info is stored.
+- Ant scripts are not standardized. 
+- Dependent libraries that are part of source code so there is a coupling between dependencies and source code.
+    - Suppose we have 3 modules we want to use. We have mod1/lib/12 jars, mod2/lib/10 jars, mod3/lib/8 jars
+    - Of them suppose 5 jars are common, it does not make sense to have duplicates
+    - Maven helps manage dependencies. It also helps separate libs from src code.
+
+Some advantage of Maven are:
+
+- In ant we say what we want to do and how we want to do it. In maven we only say what we want to do. Maven must figure out how to do things automatically. For example we say compile the program but we dont want to write the script telling how to compile like in ant.
+- Maven will follow a default sequence of execution. We do not have to define it like we did in ANT. Maven lifecycles are designed to perform tasks without human intervention.
+- Maven lets us segregate libraries. We do not need dependencies in the src code to execute the source code.
+    - Maven manages the dependencies for you
+    - This means src code becomes lightweight and there is no duplication of libraries.
+- In the devops side using maven means writing less scripts when compared to using ant because most things are auto generated.
+
+As a build tool, maven can generate code, compile, package and deploy on the server.
+
+
 
 Testing - Junit, Mockito and unit/integration tests
 ---------------------------------------------------
