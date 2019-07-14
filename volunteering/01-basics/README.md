@@ -405,12 +405,35 @@ Each individual repository tag has 3 important subtags/attributes:
 - name: this is the name of the repository
 - url: this is the repository url
 
-----------------------------------------
+An example is shown below:
+
+    <distributionManagement>
+        
+        <repository>
+            <id>repoR</id>
+            <name>repoR</id>
+            <url>http://localhost:8080/nexus/content/repositories/repoR</url>
+        </repository>
+
+        <snapshotRepository>
+            <id>repoS</id>
+            <name>repoS</id>
+            <url>http://localhost:8080/nexus/content/repositories/repoS</url>
+        </snapshotRepository>
+    
+    </distributionManagement>
 
 
-Testing - Junit, Mockito and unit/integration tests
----------------------------------------------------
 
-Dependency Injection and Spring (maybe guice? - ask someone)
-------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
 
