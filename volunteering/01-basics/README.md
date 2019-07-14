@@ -341,6 +341,7 @@ This will create a file structure as follows:
                     └── jar
                         └── AppTest.java
 
+**Maven dependencies and jar**
 
 If you look at the pom.xml, junit is listed as a dependency. We will now see how maven downloads it. Cd into the App directory. Then use the mvn compile command
 
@@ -375,6 +376,7 @@ So where is the junit library downloaded? It is clearly not in the project so wh
 
 Here .m2 is the local repository where maven keeps all the dependencies. This is great because if we already have a dependency that maven has already downloaded, it will not redownload it again.
 
+If you run mvn package, the jar is created in target with the name: App-1.0.jar. We can now run integration tests, verify, install and deploy our app.
 
 
 Testing - Junit, Mockito and unit/integration tests
