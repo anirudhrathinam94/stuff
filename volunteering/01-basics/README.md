@@ -394,7 +394,7 @@ A step by step guide for setting up a remote maven repo is in the setup folder -
 
 https://github.com/anirudhrathinam94/stuff/blob/master/volunteering/setup/01-nexus-remote-maven-repo.md
 
-In the pom.xml, the **repository** tag points to the remote repo that we created. For distribution management tag we mention 2 repositories they are:
+In the pom.xml, the **repositories** tag points to the remote repo that we created. In the repositories tag we mention 2 repositories they are:
 
 1. repository: this is the release repository
 2. snapshotRepository: this is the snapshot repository that is used during development.
@@ -407,18 +407,19 @@ Each individual repository tag has 3 important subtags/attributes:
 
 An example is shown below:
 
-        
+    <repositories>
         <repository>
             <id>repoR</id>
             <name>repoR</name>
             <url>http://localhost:8080/nexus/content/repositories/repoR</url>
         </repository>
 
-        <snapshotRepository>
+        <repository>
             <id>repoS</id>
             <name>repoS</name>
             <url>http://localhost:8080/nexus/content/repositories/repoS</url>
-        </snapshotRepository>
+        </repository>
+    </repositories>
     
 
 Now if we run: mvn clean deploy ... it fails!
