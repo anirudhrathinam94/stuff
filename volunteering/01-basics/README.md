@@ -342,6 +342,40 @@ This will create a file structure as follows:
                         └── AppTest.java
 
 
+If you look at the pom.xml, junit is listed as a dependency. We will now see how maven downloads it. Cd into the App directory. Then use the mvn compile command
+
+Maven now generates class files into a target folder. The structure is now:
+
+    .
+    └── App
+        ├── pom.xml
+        ├── src
+        │   ├── main
+        │   │   └── java
+        │   │       └── jar
+        │   │           └── App.java
+        │   └── test
+        │       └── java
+        │           └── jar
+        │               └── AppTest.java
+        └── target
+            ├── classes
+            │   └── jar
+            │       └── App.class
+            ├── generated-sources
+            │   └── annotations
+            └── maven-status
+                └── maven-compiler-plugin
+                    └── compile
+                        └── default-compile
+                            ├── createdFiles.lst
+                            └── inputFiles.lst
+
+So where is the junit library downloaded? It is clearly not in the project so where can it be? This is downloaded into the local machine. Maven is required to have a local repository on the machine where it stores all dependencies. You can find this in **~/.m2/repository/junit** folder.
+
+Here .m2 is the local repository where maven keeps all the dependencies. This is great because if we already have a dependency that maven has already downloaded, it will not redownload it again.
+
+
 
 Testing - Junit, Mockito and unit/integration tests
 ---------------------------------------------------
