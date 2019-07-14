@@ -212,11 +212,62 @@ Some advantage of Maven are:
 As a build tool, maven can generate code, compile, package and deploy on the server. Note that because maven does a lot of work for us, we need to follow a default project structure. This is different from ant where we could have any random structure because we had to write and specify everything ourselves in the build.xml script.
     - The advantage of having a std structure is because having non standard ones can be error prone. For example if I decide to move a dir in the workspace or rename a folder things will not compile and I need to either change the script or debug the problem by looking into the script.
 
-**pom.xml**
+**Structure of pom.xml**
 
 Pom (project object model) is the default script used by maven. It is similar to build.xml used in Ant. The basic structure is as follows:
 
-- It has a root <project> tag.
+It has a root project tag. The first group of tags enclosed in the project are the 4 coordinate tags. They are:
+
+- The artifactId tag
+    - Here we mention the application name (Hello World App)
+    - According to the maven docs this should be the name of the jar without the version name
+- The groupId tag
+    - Here we mention a unique identifier in the convention com.domain_name
+    - This is something that identifies your project uniquely across all projects. 
+    - It should be a domain you control and can have as many subgroups as you want like com.apache.maven or com.apache.commons etc
+- The version tag
+- The package tag
+    - Specifies the type of package such as jar
+
+The next part contains library dependencies. Maven has a reference of libraries. It gets then and makes use of them.
+
+- Here we have the dependencies tag
+    - The dependencies tag may enclose one or more dependency tags
+- Inside each dependency tag we mention the individual dependency details.
+    - These are the coorinates of each dependency (artefaceId, groupId, version, package of each individual dependency)
+
+These are the 2 main parts of the pom.xml. We also have 2 other parts which are:
+
+- build tag which encloses pligins
+- distributionmgmt tag that encloses various other tags
+
+An example of a maven script is below:
+
+    <project> 
+
+        <artefactId>Hello World</artefactId>
+        <groupId>com.abc</groupId>
+        <version>1.0</version>
+        <package>jar</package>
+
+        <dependencies>
+
+            <dependency>
+                <artefactId>Hello World</artefactId>
+                <groupId>com.abc</groupId>
+                <version>1.0</version>
+            </dependency>
+
+            <dependency>
+                <artefactId>Hello World</artefactId>
+                <groupId>com.abc</groupId>
+                <version>1.0</version>
+                <package>jar</package>  
+            </dependency>
+
+        </dependencies>
+
+    </project>
 
 
 
