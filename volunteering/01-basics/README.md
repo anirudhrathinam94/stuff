@@ -311,7 +311,7 @@ Maven has its own file structure that we have to follow. We can create one ourse
 
 This will create the maven archetype for us. Cd into the project dir and type the command and enter the following values:
 
-    Choose a number or apply filter (format: [groupId:]artifactId, case sensitive contains): 1384: 661
+    Choose a number or apply filter (format: [groupId:]artifactId, case sensitive contains): 1384: 1274
     Define value for property 'groupId': com.mycompany
     Define value for property 'artifactId': App
     Define value for property 'version' 1.0-SNAPSHOT: : 1.0
