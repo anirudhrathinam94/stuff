@@ -309,11 +309,14 @@ Maven has its own file structure that we have to follow. We can create one ourse
     
     mvn archetype:generate
 
-This will create the maven archetype for us. Cd into the project dir and type the command and enter the following values:
+If you want to create a default simple archetype and not use some other template just do the following (for the purposes of the demo I will be using this)
 
-    Choose a number or apply filter (format: [groupId:]artifactId, case sensitive contains): 1384: 1274
+    mvn archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4
+    
+    ...
+    
     Define value for property 'groupId': com.mycompany
-    Define value for property 'artifactId': App
+    Define value for property 'artifactId': App 
     Define value for property 'version' 1.0-SNAPSHOT: : 1.0
     Define value for property 'package' com.mycompany: : jar
     Confirm properties configuration:
@@ -324,6 +327,20 @@ This will create the maven archetype for us. Cd into the project dir and type th
      Y: : y
 
 This will create a file structure as follows:
+
+    .
+    └── App
+        ├── pom.xml
+        └── src
+            ├── main
+            │   └── java
+            │       └── jar
+            │           └── App.java
+            └── test
+                └── java
+                    └── jar
+                        └── AppTest.java
+
 
 
 Testing - Junit, Mockito and unit/integration tests
