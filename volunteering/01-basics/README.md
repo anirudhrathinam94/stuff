@@ -480,7 +480,19 @@ So to create a profile do:
         
     </profiles>
 
-This way when we run: mvn -P DEV, the dev plugins are run. When we run: mvn -P TST, the test plugins are run.
+This way when we run: mvn -P DEV, the dev plugins are run. When we run: mvn -P TST, the test plugins are run. In order to make one profile the default (say dev) you can do:
+
+    <profile>
+        <id>dev</id>
+        <activation>
+            <activeByDefault>true</activeByDefault>
+        </activation>
+        <properties>
+            <env>dev</env>
+            <url>http://localhost:8080/manager</url>
+            <server>nnadbmon-dev-tomcat</server>
+        </properties>
+    </profile>
 
 
 
