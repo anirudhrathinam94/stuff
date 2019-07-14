@@ -1,9 +1,13 @@
 
 # In this repo
 
-Setup Folder: Contains step by step guides on setting stuff up this includes: 
+Setup Folder: 
+
+    - Contains step by step guides on setting stuff up this includes: 
     - setting up an internal git remote repo for company use 
     - setting up a remote maven repo through nexus where devs can share their packages/artifacts
+    
+---------------------------------
 
 1. Basics:
     - This has some dev ops stuff and explains how source code is built and deployed
