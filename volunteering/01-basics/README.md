@@ -212,7 +212,11 @@ Some advantage of Maven are:
 As a build tool, maven can generate code, compile, package and deploy on the server. Note that because maven does a lot of work for us, we need to follow a default project structure. This is different from ant where we could have any random structure because we had to write and specify everything ourselves in the build.xml script.
     - The advantage of having a std structure is because having non standard ones can be error prone. For example if I decide to move a dir in the workspace or rename a folder things will not compile and I need to either change the script or debug the problem by looking into the script.
 
+**pom.xml**
 
+Pom (project object model) is the default script used by maven. It is similar to build.xml used in Ant. The basic structure is as follows:
+
+- It has a root <project> tag.
 
 
 
