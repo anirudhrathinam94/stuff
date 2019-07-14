@@ -238,7 +238,7 @@ The next part contains library dependencies. Maven has a reference of libraries.
 
 These are the 2 main parts of the pom.xml. We also have 2 other parts which are:
 
-- build tag: encloses pligins
+- build tag: Encloses plugins. Plugins can be used to run the extra stuff - things like shell scripts, perl scripts etc
 - repository tag: Specifies remote maven repo that the company uses.
 
 An example of a maven script is below:
@@ -452,13 +452,35 @@ An example of this is as follows:
     
 Now if you run mvn clean deploy, it gets deployed to the apache server.
 
+**Plugins and profiles**
 
+**Plugins** can be used to do all the extra stuff. As an example let us run a hello world on the console using a maven project. Maven by default does not support execution so we need to do it through a plugin. Just use google to find the plugin you want.
 
+**Profiles** are used to separate environments. For example developers may use dev resource files, qa may use qa resource/config files and when the app is released in prod, we make use of prod config files.
 
+So if you want to separate dev, test and prod we would normally have to create 3 separate pom.xml files. However if we want a single pom.xml for this, we use profiles. I can create separate profiles for dev, test and prod. Then I can call the appropriate build by doing:
 
+    mvn -P DEV
+    mvn -P TST
+    mvn -P PROD
 
+So to create a profile do:
 
+    <profiles>
+        
+        <profile>
+            <id>DEV</id>
+            <build> <plugins> ... </plugins> </build>
+        </profile>
+        
+        <profile>
+            <id>TST</id>
+            <build> <plugins> ... </plugins> </build>
+        </profile>
+        
+    </profiles>
 
+This way when we run: mvn -P DEV, the dev plugins are run. When we run: mvn -P TST, the test plugins are run.
 
 
 
