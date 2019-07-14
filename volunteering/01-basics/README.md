@@ -392,6 +392,19 @@ There exist various tools to set up remote maven repositories. Some of these too
 
 A step by step guide for setting up a remote maven repo is in the setup folder - use this link:
 
+https://github.com/anirudhrathinam94/stuff/blob/master/volunteering/setup/01-nexus-remote-maven-repo.md
+
+In the pom.xml, the **distributionManagement** tag points to the remote repo that we created. In the distribution management tag we mention 2 repository tags they are:
+
+1. repository: this is the release repository
+2. snapshotRepository: this is the snapshot repository that is used during development.
+
+Each individual repository tag has 3 important subtags/attributes:
+
+- id: this is the repository id
+- name: this is the name of the repository
+- url: this is the repository url
+
 ----------------------------------------
 
 
