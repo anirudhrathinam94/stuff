@@ -299,7 +299,7 @@ The phases are as follows:
 - package: Creates a jar from the compiled code
 - integration-test: Process and deploy the package if necessary into an environment where integration tests can be run
 - verify: Runs checks to verify if the package is valid
-- install: Installs the package into the local repo where it can be used as a dependency in other projects locally
+- install: Installs the package into the local repo where it can be used as a dependency in other projects locally. Basically just copies the jar file created in target file into the local .m2 repository.
 - deploy: Copies the package into remote repo where it can be shared
 
 
@@ -341,7 +341,7 @@ This will create a file structure as follows:
                     └── jar
                         └── AppTest.java
 
-**Maven dependencies and jar**
+**Dependencies and the maven repository**
 
 If you look at the pom.xml, junit is listed as a dependency. We will now see how maven downloads it. Cd into the App directory. Then use the mvn compile command
 
@@ -376,9 +376,17 @@ So where is the junit library downloaded? It is clearly not in the project so wh
 
 Here .m2 is the local repository where maven keeps all the dependencies. This is great because if we already have a dependency that maven has already downloaded, it will not redownload it again.
 
-If you run mvn package, the jar is created in target with the name: App-1.0.jar. We can now run integration tests, verify, install and deploy our app. Similarly when you package a webapp a war file is created that includes things like web.xml and the web inf files. Note: web.xml does url mappings. Now we can use annotation based mapping instead.
+If you run mvn package, the jar is created in target with the name: App-1.0.jar. We can now run integration tests, verify, install and deploy our app. Similarly when you package a webapp a war file is created that includes things like web.xml and the web inf files. Note: web.xml does url mappings. Now we can use annotation based mapping instead. These packages can be used as dependencies by other devs.
 
-**mvn install** basically just copies the jar file created in target file into the local .m2 repository.
+We have the following types of repositories:
+
+1. Local m2 repo: This is the local repository
+2. Central repo: This is maintained by apache and contains common jars like spring, junit etc
+3. Remote repo: This is maintained by the company where individual devs can share their jars to be used as dependencies.
+
+So now the task of the dev ops guys within the company is to set up the remote repository.
+
+**Setting up remote maven repository** 
 
 
 Testing - Junit, Mockito and unit/integration tests
