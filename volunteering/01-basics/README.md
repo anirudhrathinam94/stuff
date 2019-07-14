@@ -268,11 +268,48 @@ An example of a maven script is below:
 
     </project>
 
+**Lifecycle of maven script**
+
+This describes how maven takes care of what you want. There are 3 life cycles for maven. They are:
+- Default
+- Clean
+- Site
+
+Of these default is the most common one. Each life cycle has phases. A phase is similar to Ant's target - it is a set of activities that you perform in that state of time. Like target each phase can have multiple tasks. The phases of the default life cycle are as follows:
+
+    validate -> compile (compile src) -> test-compile -> test (run testcases) -> package -> integration-test -> verify -> install -> deploy
+
+Note that there are 14 phases but these are the most important ones.
+
+In the pom.xml above, we did not describe the phases. So how to call each stage of the lifecycle? We simply do: mvn life_cycle_name. So for example to compile we do:
+
+    mvn compile
+
+Now suppose we call mvn package:
+    - Maven will automatically call the previous steps in the life cycle - these are called the same way as ant dependencies are called.
+    - So if package is called, we call previous steps like validate, compile, compile testcases, tests and only after this is done, package is called.
+    
+
+The phases are as follows:
+- validate: this is a phase where all the dependency jars (dependency artifacts) as described in the dependency tag are downloaded and stored in the developer's local machine.
+    - These dependencies are used in the next phases for compiling the code
+- compile: Here we do the compilation of the source code (project/src/main/java_code)
+- test-compile: Here we do the compilation of the unit tests (project/src/tst/unit_tests)
+- test: run testcases
+- package: Creates a jar from the compiled code
+- integration-test: Process and deploy the package if necessary into an environment where integration tests can be run
+- verify: Runs checks to verify if the package is valid
+- install: Installs the package into the local repo where it can be used as a dependency in other projects locally
+- deploy: Copies the package into remote repo where it can be shared
+
+
+The maven file structure:
+
 
 
 Testing - Junit, Mockito and unit/integration tests
 ---------------------------------------------------
 
-Dependency Injection and Spring
--------------------------------
+Dependency Injection and Spring (maybe guice? - ask someone)
+------------------------------------------------------------
 
