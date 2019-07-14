@@ -386,9 +386,11 @@ We have the following types of repositories:
 
 So now the task of the dev ops guys within the company is to set up the remote repository.
 
-**Setting up remote maven repository**
+**Remote maven repository and Distribution management**
 
 There exist various tools to set up remote maven repositories. Some of these tools include Nexus, Artifactory, Archiva etc. Here we will take a look at setting up Nexus.
+
+A step by step guide for setting up a remote maven repo is in the setup folder - use this link:
 
 ----------------------------------------
 
