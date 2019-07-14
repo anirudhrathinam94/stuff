@@ -271,9 +271,9 @@ An example of a maven script is below:
 **Lifecycle of maven script**
 
 This describes how maven takes care of what you want. There are 3 life cycles for maven. They are:
-- Default
-- Clean
-- Site
+- Default: called using mvn phase_name. It is explained in detail below
+- Clean: called using mvn clean - this lifecycle deletes target directory after completion
+- Site: called using mvn site - this generates a documentation of the source code others can see.
 
 Of these default is the most common one. Each life cycle has phases. A phase is similar to Ant's target - it is a set of activities that you perform in that state of time. Like target each phase can have multiple tasks. The phases of the default life cycle are as follows:
 
@@ -378,9 +378,7 @@ Here .m2 is the local repository where maven keeps all the dependencies. This is
 
 If you run mvn package, the jar is created in target with the name: App-1.0.jar. We can now run integration tests, verify, install and deploy our app. Similarly when you package a webapp a war file is created that includes things like web.xml and the web inf files. Note: web.xml does url mappings. Now we can use annotation based mapping instead.
 
-**install and deploy**
-
-mvn install basically just copies the jar file created in target file into the local .m2 repository.
+**mvn install** basically just copies the jar file created in target file into the local .m2 repository.
 
 
 Testing - Junit, Mockito and unit/integration tests
