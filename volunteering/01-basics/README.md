@@ -253,16 +253,15 @@ An example of a maven script is below:
         <dependencies>
 
             <dependency>
-                <artefactId>Hello World</artefactId>
-                <groupId>com.abc</groupId>
+                <artefactId>Hello World Dep 1</artefactId>
+                <groupId>com.dom1</groupId>
                 <version>1.0</version>
             </dependency>
 
             <dependency>
-                <artefactId>Hello World</artefactId>
-                <groupId>com.abc</groupId>
+                <artefactId>Hello World Dep 2</artefactId>
+                <groupId>com.dom2</groupId>
                 <version>1.0</version>
-                <package>jar</package>  
             </dependency>
 
         </dependencies>
