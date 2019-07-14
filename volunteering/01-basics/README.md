@@ -300,7 +300,7 @@ The phases are as follows:
 - integration-test: Process and deploy the package if necessary into an environment where integration tests can be run
 - verify: Runs checks to verify if the package is valid
 - install: Installs the package into the local repo where it can be used as a dependency in other projects locally. Basically just copies the jar file created in target file into the local .m2 repository.
-- deploy: Copies the package into remote repo where it can be shared
+- deploy: This pushes the created jar files into the remote repository (example: nexus maven repo hosted on tomcat) where the jar can be shared with other devs.
 
 
 **The maven file structure** 
@@ -422,6 +422,37 @@ An example is shown below:
         </snapshotRepository>
     
     </distributionManagement>
+
+Now if we run: mvn clean deploy ... it fails!
+
+Note: If you look at the error message it is connected to the release repository not the snapshot repository. In the version tag, if the version is 1.0 it is sent to release. If it is 1.0-SNAPSHOT only then it will be sent to snapshot repository.
+
+The failure error code is 401: Unauthorized - we do not have permissions to deploy to the server. To do this, we need to give permissions to the developer to access the repository. This is done by adding the **settings** tag to the pom.xml
+
+- Here we provide the username and password for the nexus server
+
+An example of this is as follows:
+
+    <settings>
+        <servers>
+        
+            <server>
+                <id>repor</id>
+                <user>admin</user>
+                <password>admin123</password>
+            </server>
+
+            <server>
+                <id>repos</id>
+                <user>admin</user>
+                <password>admin123</password>
+            </server>
+
+        </servers>
+    </settings>
+
+
+
 
 
 
