@@ -376,7 +376,11 @@ So where is the junit library downloaded? It is clearly not in the project so wh
 
 Here .m2 is the local repository where maven keeps all the dependencies. This is great because if we already have a dependency that maven has already downloaded, it will not redownload it again.
 
-If you run mvn package, the jar is created in target with the name: App-1.0.jar. We can now run integration tests, verify, install and deploy our app.
+If you run mvn package, the jar is created in target with the name: App-1.0.jar. We can now run integration tests, verify, install and deploy our app. Similarly when you package a webapp a war file is created that includes things like web.xml and the web inf files. Note: web.xml does url mappings. Now we can use annotation based mapping instead.
+
+**install and deploy**
+
+mvn install basically just copies the jar file created in target file into the local .m2 repository.
 
 
 Testing - Junit, Mockito and unit/integration tests
