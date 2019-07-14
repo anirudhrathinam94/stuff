@@ -303,8 +303,27 @@ The phases are as follows:
 - deploy: Copies the package into remote repo where it can be shared
 
 
-The maven file structure:
+**The maven file structure** 
 
+Maven has its own file structure that we have to follow. We can create one ourselves using the archetype command. To generate the file structure use the command: 
+    
+    mvn archetype:generate
+
+This will create the maven archetype for us. Cd into the project dir and type the command and enter the following values:
+
+    Choose a number or apply filter (format: [groupId:]artifactId, case sensitive contains): 1384: 661
+    Define value for property 'groupId': com.mycompany
+    Define value for property 'artifactId': App
+    Define value for property 'version' 1.0-SNAPSHOT: : 1.0
+    Define value for property 'package' com.mycompany: : jar
+    Confirm properties configuration:
+    groupId: com.mycompany
+    artifactId: App
+    version: 1.0
+    package: jar
+     Y: : y
+
+This will create a file structure as follows:
 
 
 Testing - Junit, Mockito and unit/integration tests
