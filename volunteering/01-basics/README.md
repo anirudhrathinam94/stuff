@@ -411,13 +411,13 @@ An example is shown below:
         
         <repository>
             <id>repoR</id>
-            <name>repoR</id>
+            <name>repoR</name>
             <url>http://localhost:8080/nexus/content/repositories/repoR</url>
         </repository>
 
         <snapshotRepository>
             <id>repoS</id>
-            <name>repoS</id>
+            <name>repoS</name>
             <url>http://localhost:8080/nexus/content/repositories/repoS</url>
         </snapshotRepository>
     
@@ -438,18 +438,20 @@ An example of this is as follows:
         
             <server>
                 <id>repor</id>
-                <user>admin</user>
+                <username>admin</username>
                 <password>admin123</password>
             </server>
 
             <server>
                 <id>repos</id>
-                <user>admin</user>
+                <username>admin</username>
                 <password>admin123</password>
             </server>
 
         </servers>
     </settings>
+    
+Now if you run mvn clean deploy, it gets deployed to the apache server.
 
 
 
