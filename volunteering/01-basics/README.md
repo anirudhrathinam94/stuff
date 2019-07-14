@@ -239,7 +239,7 @@ The next part contains library dependencies. Maven has a reference of libraries.
 These are the 2 main parts of the pom.xml. We also have 2 other parts which are:
 
 - build tag: encloses pligins
-- distributionmgmt tag: Specifies remote maven repo that the company uses.
+- repository tag: Specifies remote maven repo that the company uses.
 
 An example of a maven script is below:
 
@@ -386,7 +386,7 @@ We have the following types of repositories:
 
 So now the task of the dev ops guys within the company is to set up the remote repository.
 
-**Remote maven repository and Distribution management**
+**Remote maven repository**
 
 There exist various tools to set up remote maven repositories. Some of these tools include Nexus, Artifactory, Archiva etc. Here we will take a look at setting up Nexus.
 
@@ -394,7 +394,7 @@ A step by step guide for setting up a remote maven repo is in the setup folder -
 
 https://github.com/anirudhrathinam94/stuff/blob/master/volunteering/setup/01-nexus-remote-maven-repo.md
 
-In the pom.xml, the **distributionManagement** tag points to the remote repo that we created. In the distribution management tag we mention 2 repository tags they are:
+In the pom.xml, the **repository** tag points to the remote repo that we created. For distribution management tag we mention 2 repositories they are:
 
 1. repository: this is the release repository
 2. snapshotRepository: this is the snapshot repository that is used during development.
@@ -407,7 +407,6 @@ Each individual repository tag has 3 important subtags/attributes:
 
 An example is shown below:
 
-    <distributionManagement>
         
         <repository>
             <id>repoR</id>
@@ -421,7 +420,6 @@ An example is shown below:
             <url>http://localhost:8080/nexus/content/repositories/repoS</url>
         </snapshotRepository>
     
-    </distributionManagement>
 
 Now if we run: mvn clean deploy ... it fails!
 
