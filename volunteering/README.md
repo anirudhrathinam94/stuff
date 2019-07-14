@@ -1,5 +1,5 @@
 
-## In this repo
+# In this repo
 
 0. Setup: Contains step by step guides on setting stuff up this includes things like: 
     - setting up an internal git remote repo for company use 
