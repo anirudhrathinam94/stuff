@@ -238,8 +238,8 @@ The next part contains library dependencies. Maven has a reference of libraries.
 
 These are the 2 main parts of the pom.xml. We also have 2 other parts which are:
 
-- build tag which encloses pligins
-- distributionmgmt tag that encloses various other tags
+- build tag: encloses pligins
+- distributionmgmt tag: Specifies remote maven repo that the company uses.
 
 An example of a maven script is below:
 
