@@ -127,7 +127,7 @@ We had to do all this crap just to run a simple hello world program. Bigger proj
 This is where the need to automate the build process arises. There are various tools to automate the build process such as ANT, Maven, Gradle etc.
 
 ----------------------------------------
-**Ant basics**
+### Ant basics
 
 Ant is an XML based scripting language. To install and all you need to do is: 
 
@@ -188,7 +188,7 @@ Here the task is echo. The terminal output on running this is:
          [echo] Target a task 2
 
 ----------------------------------------
-**Maven basics**
+### Maven basics
 
 This was developed to deal with the issues/concerns associated with ant. Some of the limitations of ANT are as follows:
 
