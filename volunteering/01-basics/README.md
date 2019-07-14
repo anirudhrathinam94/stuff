@@ -386,7 +386,11 @@ We have the following types of repositories:
 
 So now the task of the dev ops guys within the company is to set up the remote repository.
 
-**Setting up remote maven repository** 
+**Setting up remote maven repository**
+
+There exist various tools to set up remote maven repositories. 
+
+----------------------------------------
 
 
 Testing - Junit, Mockito and unit/integration tests
