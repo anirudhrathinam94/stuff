@@ -530,8 +530,64 @@ The best practice is to use master to only host jenkins do not use master to run
     4. Install java: apt get install java
     5. Start tomcat and jenkins. 
         You should be able to see them by going to https://<server_ip>:<port_no>/jenkins|tomcat
-    6. 
+
+Now you have set up the master succssfully. A slave can be any system you want (windows, linux etc). You can set up a slave as follows:
+
+    1. In master click on manage jenkins
+    2. Click manage nodes - you should see the master node
+    3. Click new node, add the name and set it as slave
+    4. Set the name configurations
+        - number of executors: at a time how many builds do you want slave to perform? (just set it to 1)
+        - remote root directory: where exactly do you want to checkout the code and build it
+                                 so if you say C drive, it checks out all the code into C and builds it
+        - Labels:
+        - Usage: Utilize it as much as possible
+        - Launch Method: if it is windows use java web start
+                         if it is linux use SSH
+                            - give the host ip address
+                            - Add credentials (username + password)
+
+This way you can set up slave nodes. Once the master/slaves are set up we can start configuring the actual jobs of integrating the code. To set up the jobs do the following:
+
+    1. Click on create new jobs and give job name
+    2. Select freestyle build (since freestyle can have ant, maven etc) and click ok
+    3. This brings up a new page for setting up a job
+        - Here you are letting the jenkins job know the tasks it is supposed to do
+    4. Some of the important things you need to know about filling in that form is as follows:
+        - Check restrict where this project can be run: 
+            - Where to assign this job? To what slave?
+            - Note: if dont do this, by default it runs on the master
+            - In the label experession enter the slave name
+        - Next we want to get the code from the VCS
+            - To use git, use the git plugin
+            - https://wiki.jenkins.io/display/JENKINS/Git+Plugin
+        - To install git plugin do:
+            - Go to manage jenkins -> plugins
+            - Search for git plugin and install
+            - Once it is set up provide the repo url
+        - Once you have your source code go to build and execute shell
+            - State the command (mvn clean install)
+            - Note: In the config section you also have to configure tools like maven etc see setup folder for details
+        - After building you have various post build options
+
+Now that we have setup a job, we can move on. Now we need to see how can we schedule the jenkins job. So click on configure, build triggers. We can schedule after each commit but to keep things simple lets schedule in periodic intervals - this follows the linux crontab syntax
+
+- So in the schedule text box type in: 30 12 * * * to schedule the job automatically on 12:30. This is time based
+- Another option is poll based. Here you give a time same as above but it triggers build only if there is a new commit
+    - Just do poll based in practical scenarios
+- Yet another option is build after other jobs are built. This is useful for parent/child jobs and jobs that are dependent on one another
+- The last option is build as parameterized. Here you can pass in other parameters to build the job (like mvn deploy etc instead of mvn install)
+
+
+
+
+
+
+
     
+
+
+
 
 
 
