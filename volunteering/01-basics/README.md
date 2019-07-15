@@ -516,16 +516,22 @@ Jenkins is an open source platform independent webtool (war file) that you can h
     Step 1: Setup Tomcat application container
     Step 2: Deploy Jenkins
 
-**Jenkins Architecture**
+**Jenkins Architecture and setup**
 
 Jenkins is hosted on the server. Once you choose your server, you choose an app container like tomcat. Here the jenkins app is hosted. This is called master.
 
 Now a problem arises: What if we have several jobs (each job contains steps like get code, build, run tests, report generation etc)? If we have too many jobs the master alone cannot handle everything. This is solved by attaching nodes to the master also called slaves. This way jobs can be run in parallel. Jenkins also gives you a way of distributing the build load from the master.
 
-The best practice is to use master to only host jenkins do not use master to run tasks. To run tasks just use the slaves.
-
-
-
+The best practice is to use master to only host jenkins do not use master to run tasks. To run tasks just use the slaves. The setup is as follows:
+    
+    1. Have a server ready
+    2. Go to jenkins website and wget the link: wget <link_name>
+    3. Go to tomcat and wget the link: wget <link_name>
+    4. Install java: apt get install java
+    5. Start tomcat and jenkins. 
+        You should be able to see them by going to https://<server_ip>:<port_no>/jenkins|tomcat
+    6. 
+    
 
 
 
