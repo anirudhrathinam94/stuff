@@ -495,6 +495,32 @@ This way when we run: mvn -P DEV, the dev plugins are run. When we run: mvn -P T
     </profile>
 
 
+Continuous Integration
+-----------------------
+
+Let us consider why CI came to be
+
+- Let's assume team X works on project A, team Y works on project B and so on.
+- X would make assumptions on how project B was developed and develop based on those assumptions
+- When it was time to integrate packages A and B to get the fully functional product, there would be numerous bugs that would push back the date of release.
+    - Dealing a large number of bugs at once is not great
+- Hence we have continuous integration. Here every time a small change is made, it is immediately integrated and deployed.
+- This way if a change is made, devs have to deal with fewer bugs at a time and this greatly reduces the overall development time.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
