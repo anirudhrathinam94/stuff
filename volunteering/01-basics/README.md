@@ -507,7 +507,11 @@ Let us consider why CI came to be
 - Hence we have continuous integration. Here every time a small change is made, it is immediately integrated and deployed.
 - This way if a change is made, devs have to deal with fewer bugs at a time and this greatly reduces the overall development time.
 
+So if we follow this methodology, our job is to get the code from the VCS, build it etc at regular intervals (per day, per commit etc). So the question is how to schedule it?
 
+One way to do it is to write a script that takes in packages as input and schedule it using cron but doing this all the time takes a lot of time and effort. So to schedule it we have certain tools like CruiseControl, Hudson, Jenkins, TeamCity, BuildForge, Bamboo etc.
+
+Here we will use Jenkins.
 
 
 
