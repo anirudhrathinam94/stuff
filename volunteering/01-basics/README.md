@@ -509,9 +509,15 @@ Let us consider why CI came to be
 
 So if we follow this methodology, our job is to get the code from the VCS, build it etc at regular intervals (per day, per commit etc). So the question is how to schedule it?
 
-One way to do it is to write a script that takes in packages as input and schedule it using cron but doing this all the time takes a lot of time and effort. So to schedule it we have certain tools like CruiseControl, Hudson, Jenkins, TeamCity, BuildForge, Bamboo etc.
+One way to do it is to write a script that takes in packages as input and schedule it using cron but doing this all the time takes a lot of time and effort. So to schedule it we have certain tools like CruiseControl, Hudson, Jenkins, TeamCity, BuildForge, Bamboo etc. Here we will use Jenkins.
 
-Here we will use Jenkins.
+Jenkins is an open source platform independent webtool (war file) that you can host on an application container like tomcat. To install all you need to do is:
+        
+    1. Setup Tomcat
+    2. Deploy Jenkins
+
+**Jenkins Architecture**
+
 
 
 
