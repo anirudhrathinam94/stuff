@@ -7,7 +7,7 @@ Linux is a distributed OS based on Unix. This means that with linux installed mu
 
 Your typical system looks like this:
 
-![computer-layers](https://imgur.com/SaXIMOO)
+![computer-layers](https://i.imgur.com/SaXIMOO.png?1)
 
 
 
