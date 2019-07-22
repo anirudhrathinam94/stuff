@@ -161,9 +161,9 @@ This section describes other file commands that can make life easier while worki
 
 There are special operators you use. They are:
 
-- >: this is the redirectional operator
-- >>: this is the append operator
-- |: this is the pipe operator
+  - >: this is the redirectional operator
+  - >>: this is the append operator
+  - |: this is the pipe operator
 
 
 
