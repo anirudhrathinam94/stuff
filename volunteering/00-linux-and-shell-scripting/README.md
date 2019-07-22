@@ -170,6 +170,43 @@ They are described as follows:
   - \>: Used to redirect output. For example running ```ls > hello.txt``` will print the contents of ls into hello.txt. Note that each time we do this, the file ```hello.txt``` is overwritten
   
   - \>>: This is the append operator. It is the same as above but instead of overwriting it appends.
+  
+  - |: Used for chaining/combining commands. Pipes the output of one command to another. Here doing ```c1 | c2``` means that output after running c1 is input of c2.
+    - Running ```ls | wc -l``` counts number of lines after running ls command
+    - Another example is to remove duplicates in a way uniq cannot. For example:
+    
+    If we have:
+    
+        Hello
+        Hello
+        SCP
+        BGM
+        SCP
+        BG<
+        
+    Running ```uniq file.txt``` produces the following. This still has duplicates as only consecutive duplicates are eleminated.
+    
+        Hello
+        SCP
+        BGM
+        SCP
+        BGM
+    
+    But if we run ```sort file.txt | uniq``` it produces:
+    
+        BGM
+        SCP
+        Hello
+
+    - Yet another use case is to print a specific row in a table. 
+    
+    If we have the following: 
+    
+        ro1 | ro2 
+        ABC | CSE
+        XYZ | IT
+        
+    And we only want to print the 2nd row we can do ```head -2 file.txt | tail -1```. This prints ```ABC | CSE```.
 
 
 
