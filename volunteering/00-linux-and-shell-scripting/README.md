@@ -161,10 +161,15 @@ This section describes other file commands that can make life easier while worki
 
 There are special operators you use. They are:
 
-  - \>: this is the redirectional operator
-  - \>>: this is the append operator
-  - |: this is the pipe operator
+    >: this is the redirectional operator
+    >>: this is the append operator
+    |: this is the pipe operator
 
+They are described as follows:
+
+  - \>: Used to redirect output. For example running ```ls > hello.txt``` will print the contents of ls into hello.txt. Note that each time we do this, the file ```hello.txt``` is overwritten
+  
+  - \>>: This is the append operator. It is the same as above but instead of overwriting it appends.
 
 
 
