@@ -46,6 +46,8 @@ In linux you have commands that have the following format: command -option
     - a: show hidden
 - cd: change directory
 
+------------------------------------------
+
 ### File operations
 
 **Basic commands are:**
