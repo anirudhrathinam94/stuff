@@ -171,9 +171,9 @@ They are described as follows:
   
   - \>>: This is the append operator. It is the same as above but instead of overwriting it appends.
   
-  - |: Used for chaining/combining commands. Pipes the output of one command to another. Here doing ```c1 | c2``` means that output after running c1 is input of c2.
-    - Running ```ls | wc -l``` counts number of lines after running ls command
-    - Another example is to remove duplicates in a way uniq cannot. For example:
+  - |: Used for chaining/combining commands. Pipes the output of one command to another. Here doing ```c1 | c2``` means that output after running c1 is input of c2. Some examples are below:
+       
+    **Example 1: Removing duplicates**
     
     If we have:
     
@@ -198,7 +198,7 @@ They are described as follows:
         SCP
         Hello
 
-    - Yet another use case is to print a specific row in a table. 
+    **Example 2: print a specific row in a table** 
     
     If we have the following: 
     
@@ -208,7 +208,9 @@ They are described as follows:
         
     And we only want to print the 2nd row we can do ```head -2 file.txt | tail -1```. This prints ```ABC | CSE```.
 
+-----------------------------------------------------
 
+### System commands
 
 
 
