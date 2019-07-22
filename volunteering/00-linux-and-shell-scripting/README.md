@@ -31,6 +31,7 @@ As an admin you can add new users by doing the following as root:
 
 - adduser <username>: this adds a new user <username>
 - password <username>: this a new password for the user <username>
+- su <username>: This can allow you to switch users (if you have appropriate permissions)
 
 In linux you have commands that have the following format: command -option
 
@@ -78,6 +79,18 @@ In linux you have commands that have the following format: command -option
 
 - vi: Lets you perform write operation using the vi editor
   
+---------------------------------------------
+
+### Linux specific commands
+
+This section describes commands specific to the linux OS that can make life easier while working.
+
+**Searching**
+
+- find . -name Hello.txt: Searches for file named Hello.txt among list of files in current (.) directory
+    - find . -name H*: Searches for all files starting with H among list of files in current directory (* is wildcard)
+    - find . -name \*.txt: Searches for all files ending with .txt in current directory (all text files)  
+
 
 
 
