@@ -105,7 +105,7 @@ This section describes other file commands that can make life easier while worki
     - wc -l hello.txt: Prints number of lines in hello.txt
 
 - cut: If we have a file in the form of a table and we want to return a specific column this is used.
-    - cut f3 table.txt: Prints 3rd column in the table. Condition - columns must be separated by tabs
+    - cut f3 table.txt: Prints 3rd column in the table. Condition - columns must be separated by tabs. Here f is field separator
     - cut f1-3 table.txt: Prints columns 1-3. Condition - columns must be separated by tabs
     - cut -d" " f1-3 table.txt: Prints columns 1-3 where columns are separated by single space. -d is delimiter flag.
     - cut -d";" f1 table.txt: Prints first col of table where cols are separated by ;. 
@@ -125,8 +125,45 @@ This section describes other file commands that can make life easier while worki
           hi
           Hello
           
-- sort: sorts a file. Also works with strings and special characters
-    - sort file.txt
+- sort: sorts a file. Also works with strings and special characters (ASCII based sort)
+    - sort file.txt: Sorts in ascending order
+    - sort -r file.txt: Sorts in descending order
+
+- sed: Used for find and replace
+    - sed 's/,/%/g' hello.txt: finds string (s) ',' replaces it with string '%' in global (g) scope in file hello.txt
+    - Note: This will not modify hello.txt. It just shows it on console. To save those changes just use -i command (or just do the same in vim). So why use sed when we have vi? It is because sed can be used for multiple files.
+    - sed 's/,/%/g' \*.txt: Do sed operations on all text files.
+
+- awk: Basically used to format the data and shows the output. 
+    
+    - For example suppose running cut -d" " f1-2 table.txt shows:
+
+          ro1 ro2 
+          ABC CSE
+          XYZ IT
+          
+    - If we want to replace spaces with " | " for better formatting we can use the awk command.
+    - awk -F" " '{print $1$2}' table.txt: The output is:
+    
+          ro1 ro2 
+          ABC CSE
+          XYZ IT
+          
+    - awl -F" " '{print $1" | "$2}' table.txt: The output is:
+          
+          ro1 | ro2 
+          ABC | CSE
+          XYZ | IT
+        
+------------------------------------------------
+
+### Operators:
+
+There are special operators you use. They are:
+
+- >: this is the redirectional operator
+- >>: this is the append operator
+- |: this is the pipe operator
 
 
 
