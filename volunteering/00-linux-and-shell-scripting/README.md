@@ -46,9 +46,9 @@ Commands are:
     - a: show hidden
 - cd: change directory
 
-### File system operations
+### File operations
 
-Commands are:
+Basic commands are:
 
 - mkdir <name>: make dir
     - p: For the creation of nested directories
@@ -63,8 +63,20 @@ Commands are:
 - mv: move or rename file
     - mv hi.txt hello.txt: changes hi to hello
     - mv dir1 dir2: changes directory names (no need to give -r flag)
+
+Commands to read a file are:
+
+- cat: read contents of file and paste in terminal
+- more: same as cat but view page by page (space to go to next page)
+- less: same as more but with extra capabilities - navigate up/down, can search for string using /keywordto command and supports vi commands
+- head -50: shows first 50 lines. It can be changed to any number
+- tail -20: shows last 20 lines. It can be changed to any number
+
+Command to write is:
+
+- vi: Lets you perform write operation using the vi editor
   
-  
+
 
 
 
