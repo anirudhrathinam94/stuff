@@ -12,3 +12,43 @@ Your typical system looks like this:
 Let us focus on layer 4. The **shell** is a program that takes some input from the keyboard and gives it to the OS to perform. In linux we have programs like bash or zsh that acts as the shell. In this layer we also have another program called the **terminal emulator**. This is a program that lets you interact with the shell.
 
 In most servers we use the shell/terminal to do stuff because a lot of the system resources are consumed by the UI.
+
+-----------------------------------------------------
+
+Basics
+------
+
+If you want to access a remote linux machine you need: 1) Informantion about the machine - this includes the IP or hostname and the login credentials (user + pass) and 2) Depending on what system you are using you may need proxy tools like Putty to grant access.
+
+- Note: To know the ip config just use the command use: ifconfig
+
+If you need a tool called putty, download it and put in the ip address in the hostname field. Putty will connect to your server on a port number such as port 22.
+  - A port is a socket on the server which is open to the external world to communicate to another machine.
+  
+Linux has a tree based file system. The admin is given access to the root directory (/) and can do whatever he/she wants. As a user you will be given your own account which is created in the home directory (home/user) -> here you have limited access and can only touch things under the user/directory.
+
+As an admin you can add new users by doing the following as root:
+
+- adduser <username>: this adds a new user <username>
+- password <username>: this a new password for the user <username>
+
+In linux you have commands that have the following format: command -option
+
+----------------------------------------
+
+File navigation
+---------------
+
+Commands are:
+
+- pwd: know your current location
+- ls: list current dir. Flags listed below:
+    - l: detailed view
+    - a: show hidden
+- cd: change directory
+
+
+
+
+
+
