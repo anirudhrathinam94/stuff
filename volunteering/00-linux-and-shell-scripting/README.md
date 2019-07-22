@@ -36,8 +36,7 @@ In linux you have commands that have the following format: command -option
 
 ----------------------------------------
 
-File navigation
----------------
+### File navigation
 
 Commands are:
 
@@ -47,8 +46,25 @@ Commands are:
     - a: show hidden
 - cd: change directory
 
+### File system operations
 
+Commands are:
 
+- mkdir <name>: make dir
+    - p: For the creation of nested directories
+- cp: Used to copy
+    - cp file.txt dir: Copies source file to destination directory
+    - cp file.txt file-duplicate.txt: Makes duplicate of file
+    - cp -r dir1 dir2 : Recursively copies dir1 and all its contents into dir2
+    - cp *.txt dir: Copies all .txt files in current location to directory dir
+- rm: Delete a file
+    - rm -r dir: recursively delete directory and all its contents
+    - rm -rf dir: recursively delete and dont ask for confirmation
+- mv: move or rename file
+    - mv hi.txt hello.txt: changes hi to hello
+    - mv dir1 dir2: changes directory names (no need to give -r flag)
+  
+  
 
 
 
