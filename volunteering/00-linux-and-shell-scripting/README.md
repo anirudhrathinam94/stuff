@@ -38,7 +38,7 @@ In linux you have commands that have the following format: command -option
 
 ### File navigation
 
-Commands are:
+**Commands are:**
 
 - pwd: know your current location
 - ls: list current dir. Flags listed below:
@@ -48,7 +48,7 @@ Commands are:
 
 ### File operations
 
-Basic commands are:
+**Basic commands are:**
 
 - mkdir <name>: make dir
     - p: For the creation of nested directories
@@ -64,7 +64,7 @@ Basic commands are:
     - mv hi.txt hello.txt: changes hi to hello
     - mv dir1 dir2: changes directory names (no need to give -r flag)
 
-Commands to read a file are:
+**Commands to read a file are:**
 
 - cat: read contents of file and paste in terminal
 - more: same as cat but view page by page (space to go to next page)
@@ -72,7 +72,7 @@ Commands to read a file are:
 - head -50: shows first 50 lines. It can be changed to any number
 - tail -20: shows last 20 lines. It can be changed to any number
 
-Command to write is:
+**Command to write is:**
 
 - vi: Lets you perform write operation using the vi editor
   
