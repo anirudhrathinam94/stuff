@@ -71,7 +71,7 @@ In linux you have commands that have the following format: command -option
 
 - cat: read contents of file and paste in terminal
 - more: same as cat but view page by page (space to go to next page)
-- less: same as more but with extra capabilities - navigate up/down, can search for string using /keywordto command and supports vi commands
+- less: same as more but with extra capabilities - navigate up/down, can search for string using /<keyword> command and supports vi commands
 - head -50: shows first 50 lines. It can be changed to any number
 - tail -20: shows last 20 lines. It can be changed to any number
 
@@ -81,15 +81,55 @@ In linux you have commands that have the following format: command -option
   
 ---------------------------------------------
 
-### Linux specific commands
+### Other file commands
 
-This section describes commands specific to the linux OS that can make life easier while working.
+This section describes other file commands that can make life easier while working.
 
-**Searching**
+**Searching files**
 
-- find . -name Hello.txt: Searches for file named Hello.txt among list of files in current (.) directory
+- find: Name based search for a file among a list of files (similar to searching for a file in windows search box)
+    - find . -name Hello.txt: Searches for file named Hello.txt among list of files in current (.) directory
     - find . -name H*: Searches for all files starting with H among list of files in current directory (* is wildcard)
-    - find . -name \*.txt: Searches for all files ending with .txt in current directory (all text files)  
+    - find . -name \*.txt: Searches for all files ending with .txt in current directory (all text files)
+    - find also has flags -size and -mtime for size/time based searches.
+
+**Searching file content**
+
+- grep: File content search. This searches for a given pattern (character string) in all the files present in the given directory (or file).
+    - grep string file.txt: Searches for all instances of string in file.txt
+    - grep string \*: Searches for string in all files in directory
+    - grep -R string \*.txt: Recursively searches for string in all text files in current directory and all subdirectories.       - grep -R -n string \*.txt: The -n flag to also shows the line number.
+    - grep -R -n -i string \*.txt: The -i flag ignores the case so we search for both String and string 
+
+- wc: Counts number of lines, words and characters of file (-l, -w, -c flags) =
+    - wc -l hello.txt: Prints number of lines in hello.txt
+
+- cut: If we have a file in the form of a table and we want to return a specific column this is used.
+    - cut f3 table.txt: Prints 3rd column in the table. Condition - columns must be separated by tabs
+    - cut f1-3 table.txt: Prints columns 1-3. Condition - columns must be separated by tabs
+    - cut -d" " f1-3 table.txt: Prints columns 1-3 where columns are separated by single space. -d is delimiter flag.
+    - cut -d";" f1 table.txt: Prints first col of table where cols are separated by ;. 
+
+- uniq: Helps eleminate duplicates - only shows unique files
+    - uniq hello.txt: Eleminates consecutive dupliates to show only uniques. Running the command on:
+    
+          Hello
+          hi
+          hi
+          Hello
+          Hello
+      
+      Produces
+          
+          Hello
+          hi
+          Hello
+          
+- sort: sorts a file. Also works with strings and special characters
+    - sort file.txt
+
+
+
 
 
 
