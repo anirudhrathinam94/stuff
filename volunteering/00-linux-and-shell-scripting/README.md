@@ -247,7 +247,9 @@ They are described as follows:
 - scp: This is secure copy. It helps us copy files between one machine to another machine.
     - To copy within the same machine the command is cp <filename> <destination>
     - To copy to different machine (machine B) your destination should have the username of machine B, the ip and the filepath
-    - For example ```scp hello.txt user@192.168.146.129:<path> ```
+    - For example ```scp hello.txt user_machine_B @ 192.168.146.129: <path>``` Here 192.168.146.129 is IP of B
+    - You need to provide the password of machine B (unless auto ssh is enabled) and we can transfer files.
+  - scp -R <dir-name> <user>@<ip>:<path>: Like copy the -R flag lets you copy entire directories.
 
 
 
