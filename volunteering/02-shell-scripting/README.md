@@ -17,6 +17,8 @@ Before we proceed a quick note:
     - https://unix.stackexchange.com/questions/117438/why-are-bash-tests-so-picky-about-whitespace
 - I will be mentioning cases where whitespaces can cause problems as note pointers.
 
+----------------------------------
+
 ### Variables and Datatypes
 
 When it comes to shell scripts, **there is only 1 datatype - this is String**. Similar to languages like python or ruby, shell scripts are dynamically typed so variables can be assigned on the fly 
@@ -29,6 +31,8 @@ To reference variables we use thr ```$``` symbol. Below is a script where we dec
 
 - [Note: in ```x=10``` there should be no whitespaces]. 
 
+----------------------------------
+
 ### I/O operations
 
 Write is done using the ```echo``` command as seen above.
@@ -40,7 +44,9 @@ A sample script is as follows:
     read x
     echo the value of x is: $x
 
-### Arithmetic operations
+----------------------------------
+
+### Arithmetic operations (+, -, *, /)
 
 The following **DOES NOT** work:
 
@@ -86,6 +92,60 @@ This will throw a syntax error. This is because in shell ```*``` means all (wild
     
 This returns the correct answer
 
+----------------------------------
+
+### Comparision operations
+
+For comparisons operators like >, <, =, != do not work because everything is represented as strings. So to compare properly we need to use flags. They are shown below:
 
 
+    >           -gt
+    <           -lt
+    >=          -ge
+    <=          -le
+    ==          -eq
+    !=          -ne
+
+When we use these operations in conditionals, remember to use the flags.
+
+----------------------------------
+
+### Conditional Statements
+
+The format is as follows:
+
+    if [ cond ]
+    then
+        # something
+    else    # else is optional
+        # something 
+    fi
+
+- Note here remember to leave space between the square brackets ```[ cond ]```
+
+        echo Enter a
+        read a
+
+        echo Enter b
+        read b
+
+        if [ $a -gt $b ]
+        then
+          echo "a > b"
+        fi
+
+To use the else conditional do the following:
+
+        echo Enter a
+        read a
+
+        echo Enter b
+        read b
+
+        if [ $a -gt $b ]
+        then
+          echo "a more than b"
+        else
+          echo "a less than b"
+        fi
 
