@@ -12,9 +12,10 @@ Save this as HelloWorld.sh. To run the script simply type the following command 
     sh HelloWorld.sh
 
 Before we proceed a quick note: 
-    - Shell scripts are very inconsistent when it comes to whitespaces. This is due to historical reasons and is something you are going to have to live with. 
+
+- Shell scripts are very inconsistent when it comes to whitespaces. This is due to historical reasons and is something you are going to have to live with. 
     - https://unix.stackexchange.com/questions/117438/why-are-bash-tests-so-picky-about-whitespace
-    - I will be mentioning cases where whitespaces can cause problems as note pointers.
+- I will be mentioning cases where whitespaces can cause problems as note pointers.
 
 **Variables and Datatypes**
 
