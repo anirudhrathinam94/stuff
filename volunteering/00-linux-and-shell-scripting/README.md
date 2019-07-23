@@ -264,15 +264,31 @@ The format is divided into 4 groups as follows:
 
     _ | _ _ _ | _ _ _ | _ _ _ 
 
-    1     2       3       4
+    0     1       2       3
 
 
-**Group 1**: This is used to identify if the item is a file or directory.
+**Group 0**: This is used to identify if the item is a file or directory.
   - -: means it is a file
   - d: means it is a directory
 
+**Group 1**: This represents the author.
 
+**Group 2**: This represents the group.
 
+**Group 3**: This represents others.
+
+Each of the groups have characters r, w, x
+  - r is read permission. It is assigned the value 4.
+  - w is write permission. It is assigned the value 2.
+  - x is execute permission. It is assigned the value 1.
+  
+To change permissions we use the command ```chmod <number_for_author> <number_for_group> <number_for_others>```.
+
+So running ```chmod 754``` means:
+
+- Author has read, write and execute permissions
+- Group has read and execute permissions
+- Others only have read permissions
 
 
 
