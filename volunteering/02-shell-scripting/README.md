@@ -17,7 +17,7 @@ Before we proceed a quick note:
     - https://unix.stackexchange.com/questions/117438/why-are-bash-tests-so-picky-about-whitespace
 - I will be mentioning cases where whitespaces can cause problems as note pointers.
 
-**Variables and Datatypes**
+### Variables and Datatypes
 
 When it comes to shell scripts, **there is only 1 datatype - this is String**. Similar to languages like python or ruby, shell scripts are dynamically typed so variables can be assigned on the fly 
 
@@ -29,7 +29,7 @@ To reference variables we use thr ```$``` symbol. Below is a script where we dec
 
 - [Note: in ```x=10``` there should be no whitespaces]. 
 
-**I/O operations**
+### I/O operations
 
 Write is done using the ```echo``` command as seen above.
 Read can be done using the ```read``` keyword. This reads a variable from the command line.
@@ -40,7 +40,7 @@ A sample script is as follows:
     read x
     echo the value of x is: $x
 
-**Arithmetic operations**
+### Arithmetic operations
 
 The following **DOES NOT** work:
 
@@ -67,6 +67,24 @@ So to perform arithmetic operations we can use the ```expr``` command.
 This performs the add operation correctly.
 
 To store the value of a command such as ```expr $x + $y``` in a variable we use the backtick command ( ` ).
+
+    echo Example
+    x=2
+    y=3
+
+    c=`expr $x + $y`
+
+    echo c is: $c
+
+Now let us try performing multiplication operation.
+        
+    expr 5 * 2
+
+This will throw a syntax error. This is because in shell ```*``` means all (wildcard) so in order to indicate that * is simply * and not wildcard, we need to use the escape character ' \ '.
+
+    expr 5 \* 2
+    
+This returns the correct answer
 
 
 
