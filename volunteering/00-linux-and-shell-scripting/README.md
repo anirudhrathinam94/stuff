@@ -249,9 +249,27 @@ They are described as follows:
     - To copy to different machine (machine B) your destination should have the username of machine B, the ip and the filepath
     - For example ```scp hello.txt user_machine_B @ 192.168.146.129: <path>``` Here 192.168.146.129 is IP of B
     - You need to provide the password of machine B (unless auto ssh is enabled) and we can transfer files.
-  - scp -R <dir-name> <user>@<ip>:<path>: Like copy the -R flag lets you copy entire directories.
+    - ```scp -R <dir-name> <user>@<ip>:<path>```: Like copy the -R flag lets you copy entire directories.
+
+- ssh: This is the secure shell command. This is used to run commands remotely - that is we can use machine A to run commands on machine B.
+    - use ```ssh user@<ip-address>``` to ssh.
+ 
+------------------------------------------
+
+### File Permissions
+
+When you do detailed ls (ls -l) you see a bunch of characters like this in the beginning ```drwxr-xr-x```. These represent the file permissions.
+
+The format is divided into 4 groups as follows:
+
+    _ | _ _ _ | _ _ _ | _ _ _ 
+
+    1     2       3       4
 
 
+**Group 1**: This is used to identify if the item is a file or directory.
+  - -: means it is a file
+  - d: means it is a directory
 
 
 
