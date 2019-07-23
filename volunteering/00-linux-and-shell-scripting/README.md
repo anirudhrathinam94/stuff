@@ -244,7 +244,10 @@ They are described as follows:
 
 ### Machine to machine communication
 
-- scp
+- scp: This is secure copy. It helps us copy files between one machine to another machine.
+    - To copy within the same machine the command is cp <filename> <destination>
+    - To copy to different machine (machine B) your destination should have the username of machine B, the ip and the filepath
+    - For example ```scp hello.txt user@192.168.146.129:<path> ```
 
 
 
