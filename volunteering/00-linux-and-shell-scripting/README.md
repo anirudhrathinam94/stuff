@@ -99,7 +99,8 @@ This section describes other file commands that can make life easier while worki
     - grep string file.txt: Searches for all instances of string in file.txt
     - grep string \*: Searches for string in all files in directory
     - grep -R string \*.txt: Recursively searches for string in all text files in current directory and all subdirectories.       - grep -R -n string \*.txt: The -n flag to also shows the line number.
-    - grep -R -n -i string \*.txt: The -i flag ignores the case so we search for both String and string 
+    - grep -R -n -i string \*.txt: The -i flag ignores the case so we search for both String and string
+    - grep -w string \*.txt: Searches for only one word (string) in all text files.
 
 - wc: Counts number of lines, words and characters of file (-l, -w, -c flags) =
     - wc -l hello.txt: Prints number of lines in hello.txt
@@ -211,6 +212,47 @@ They are described as follows:
 -----------------------------------------------------
 
 ### System commands
+
+
+**System Processes**
+
+- ps -aef: Lists all the processes. Shows User (UID), Process ID (PID), Parent Process ID (PPID - every process is forked from another process. 
+    - The bash terminal is also a process - the command ps -aef that we ean is also a process whose parent is the terminal
+- kill: kill the process. For example if you run ```sleep 300``` and now you want to kill it, **you can use Ctrl+z to push the process to the background**.
+    - Then run ```kill <PID>``` to kill it.
+    - kill -9 <PID>: This is force kill
+    - Note: as regular user you cannot kill root processes because you dont have permissions
+
+
+**Disk commands**
+
+- df -h: Shows things like free disk space, used space, usage % etc
+- du -sh hello.txt: Shows the space taken by hello.txt
+    - You can also do ```du -sh *``` for all files.
+- top: this shows the load on the CPU, which process takes how much memory etc
+
+**Network commands**
+
+- **Use case 1:** If we are running a server like apache on the linux machine and you are accessing s/w from some other application, it will open a port. A port is a socket connection to connect to the external world. So how do you see an open port in a given machine?
+    - Run the command ```netstat -nl```. To check if port number 8000 is open you can simply pipe it into grep and see if an output is returned. Run ```netstat -nl | grep -1 8000```
+
+- **Use case 2:** Let us assume we have 2 linux machines ans port 8000 of machine 1 is open. Is m1-8000 accessible by m2?
+    - telnet <IP-address> <Port-number>: If running this makes the screen hang or does not show terminal, it is valid. If port not open we get message saying could not open connections
+
+
+-----------------------------------------------------
+
+### Machine to machine communication
+
+- scp
+
+
+
+
+
+
+
+
 
 
 
