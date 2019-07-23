@@ -3,7 +3,7 @@
 
 Shell scripts are lightweight scripts that help us automate system tasks. Scripts are interpreted - this means we scan and execute line by line. They usually have the .sh extension. Simply put, shell scripts are a combination of commands with some logic.
 
-A sample hello world script is as follows:
+A simple hello world script is as follows:
 
     echo hello world
 
@@ -35,9 +35,31 @@ A sample script is as follows:
 
 **Arithmetic operations**
 
+The following **DOES NOT** work:
 
+    echo Example
+    x=20
+    y=30
 
+    c=$x+$y
 
+    echo c is: $c
+
+It prints out: ```c is: 20+30``` instead of 5. The reason is that shell scripts treat everything as strings - here in the case of x, it is giving x the value of String "20" and not Integer 20.
+
+So to perform arithmetic operations we can use the ```expr``` command. 
+
+    echo Example
+    x=2
+    y=3
+
+    expr $x + $y
+
+- [Note in ```expr $x + $y``` you need to leave whitespace]
+
+This performs the add operation correctly.
+
+To store the value of a command such as ```expr $x + $y``` in a variable we use the backtick command ( ` ).
 
 
 
