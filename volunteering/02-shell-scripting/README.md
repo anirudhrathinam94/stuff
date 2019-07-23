@@ -11,17 +11,22 @@ Save this as HelloWorld.sh. To run the script simply type the following command 
 
     sh HelloWorld.sh
 
+Before we proceed a quick note: 
+    - Shell scripts are very inconsistent when it comes to whitespaces. This is due to historical reasons and is something you are going to have to live with. 
+    - https://unix.stackexchange.com/questions/117438/why-are-bash-tests-so-picky-about-whitespace
+    - I will be mentioning cases where whitespaces can cause problems as note pointers.
+
 **Variables and Datatypes**
 
 When it comes to shell scripts, **there is only 1 datatype - this is String**. Similar to languages like python or ruby, shell scripts are dynamically typed so variables can be assigned on the fly 
-
-- [Note: there should be no spaces between variables and assignment]. 
 
 To reference variables we use thr ```$``` symbol. Below is a script where we declare a variable and print it on screen.
 
     #echo hello world
     x=10
     echo value of x is: $x
+
+- [Note: in ```x=10``` there should be no whitespaces]. 
 
 **I/O operations**
 
